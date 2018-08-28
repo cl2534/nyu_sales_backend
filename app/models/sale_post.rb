@@ -1,0 +1,2 @@
+class SalePost < ApplicationRecord
+end
