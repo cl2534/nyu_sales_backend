@@ -1,7 +1,7 @@
 class Api::V1::SalePostsController < ApplicationController
   before_action :find_salepost, only: [:show, :destroy, :update]
   def index
-    @saleposts = SalePost.all
+    saleposts = SalePost.all.includes(:sale_categories).find_by id: params[:id]
     render json: { saleposts: SalePost.all}
   end
 
@@ -10,6 +10,7 @@ class Api::V1::SalePostsController < ApplicationController
   end
 
   def show
+    @salepost = SalePost.all.includes(:sale_categories).find_by id: params[:id]
     # @salepost = SalePost.find(params[:id])
     render json: { salepost: @salepost}
   end
@@ -38,7 +39,7 @@ class Api::V1::SalePostsController < ApplicationController
   private
 
   def salepost_params
-    params.permit(:name)
+    params.permit(:name, :picture_url, :user_id)
   end
 
   def find_salepost

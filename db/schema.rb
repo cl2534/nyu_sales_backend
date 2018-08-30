@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_165340) do
+ActiveRecord::Schema.define(version: 2018_08_30_185134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "post_categories", force: :cascade do |t|
+    t.bigint "sale_post_id"
+    t.bigint "sale_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sale_category_id"], name: "index_post_categories_on_sale_category_id"
+    t.index ["sale_post_id"], name: "index_post_categories_on_sale_post_id"
+  end
 
   create_table "sale_categories", force: :cascade do |t|
     t.text "name"
@@ -24,12 +33,9 @@ ActiveRecord::Schema.define(version: 2018_08_28_165340) do
   create_table "sale_posts", force: :cascade do |t|
     t.text "name"
     t.text "picture_url"
-    t.text "location"
     t.bigint "user_id"
-    t.bigint "sale_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["sale_category_id"], name: "index_sale_posts_on_sale_category_id"
     t.index ["user_id"], name: "index_sale_posts_on_user_id"
   end
 

@@ -1,8 +1,8 @@
 class Api::V1::SaleCategoriesController < ApplicationController
   before_action :find_salecategory, only: [:show, :destroy, :update]
   def index
-    @salecategories = SaleCategory.all
-    render json: { salecategories: SaleCategory.all}
+    @salecategories = SaleCategory.all.includes(:sale_posts).find_by id: params[:id]
+    render json: { salecategories: SaleCategory.all}, include:  ['sale_posts']
   end
 
   def new
@@ -10,6 +10,7 @@ class Api::V1::SaleCategoriesController < ApplicationController
   end
 
   def show
+    salecategory = SaleCategory.includes(:sale_posts).find_by id: params[:id]
     # @salecategory = SaleCategory.find(params[:id])
     render json: { salecategory: @salecategory}
   end
