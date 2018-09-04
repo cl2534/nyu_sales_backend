@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   resources :post_categories
   namespace :api do
     namespace :v1 do
-      resources :sale_categories, :sale_posts, :users, :post_categories
-      post 'auth/register', to: 'users#register'
-      get 'test', to: 'users#test'
+      resources :sale_categories, :sale_posts, :post_categories, :users
+      # resources :users, only: %i[create]
+      post '/login', to: 'auth#create'
+      get '/profile', to: 'users#profile'
     end
   end
   # resources :sale_categories
