@@ -1,48 +1,50 @@
 class Api::V1::PostCategorysController < ApplicationController
-  before_action :find_postcategory, only: [:show, :destroy, :update]
+  before_action :find_post_category, only: [:show, :destroy, :update]
+  skip_before_action :authorized, only: %i[create index]
+
   def index
-    @postcategories = PostCategory.all
-    render json: { postcategories: PostCategory.all}
+    @post_categories = PostCategory.all
+    render json: { post_categories: PostCategory.all}
   end
 
   def new
-    @postcategory = PostCategory.create
+    @post_category = PostCategory.create
   end
 
   def show
-    # @postcategory = PostCategory.find(params[:id])
-    render json: { postcategory: @postcategory}
+    # @post_category = PostCategory.find(params[:id])
+    render json: { post_category: @post_category}
   end
 
   def create
-    @postcategory = PostCategory.create(postcategory_params)
-    render json: {postcategory: @postcategory}
+    @post_category = PostCategory.create(post_category_params)
+    render json: {post_category: @post_category}
   end
 
   def update
-    # @postcategory = PostCategory.find(params[:id])
-    @postcategory.update(postcategory_params)
-    if @postcategory.save
-      render json: @postcategory, status: :accepted
+    # @post_category = PostCategory.find(params[:id])
+    @post_category.update(post_category_params)
+    if @post_category.save
+      render json: @post_category, status: :accepted
     else
-      render json: { errors: @postcategory.errors.full_messages }, status: :unprocessible_entity
+      render json: { errors: @post_category.errors.full_messages }, status: :unprocessible_entity
     end
   end
 
   def destroy
     # @post = post.find(params[:id])
-    @postcategory.destroy
-    render json: @postcategory, status: :accepted
+    @post_category.destroy
+    render json: @post_category, status: :accepted
   end
 
 
   private
 
-  def postcategory_params
+  def post_category_params
     params.permit(:sale_category_id, :sale_post_id)
   end
 
-  def find_postcategory
-    @postcategory = PostCategory.find(params[:id])
+  def find_post_category
+    @post_category = PostCategory.find(params[:id])
   end
 end

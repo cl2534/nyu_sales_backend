@@ -1,48 +1,50 @@
 class Api::V1::SalePostsController < ApplicationController
-  before_action :find_salepost, only: [:show, :destroy, :update]
+  before_action :find_sale_post, only: [:show, :destroy, :update]
+  skip_before_action :authorized, only: %i[create index]
+
   def index
-    saleposts = SalePost.all.includes(:sale_categories).find_by id: params[:id]
-    render json: { saleposts: SalePost.all}
+    @sale_posts = SalePost.all.includes(:sale_categories).find_by id: params[:id]
+    render json: { sale_posts: SalePost.all}
   end
 
   def new
-    @salepost = SalePost.create
+    @sale_post = SalePost.create
   end
 
   def show
-    @salepost = SalePost.all.includes(:sale_categories).find_by id: params[:id]
-    # @salepost = SalePost.find(params[:id])
-    render json: { salepost: @salepost}
+    @sale_post = SalePost.all.includes(:sale_categories).find_by id: params[:id]
+    # @sale_post = SalePost.find(params[:id])
+    render json: { sale_post: @sale_post}
   end
 
   def create
-    @salepost = SalePost.create(salepost_params)
-    render json: {salepost: @salepost}
+    @sale_post = SalePost.create(sale_post_params)
+    render json: {sale_post: @sale_post}
   end
 
   def update
-    # @salepost = SalePost.find(params[:id])
-    @salepost.update(salepost_params)
-    if @salepost.save
-      render json: @salepost, status: :accepted
+    # @sale_post = SalePost.find(params[:id])
+    @sale_post.update(sale_post_params)
+    if @sale_post.save
+      render json: @sale_post, status: :accepted
     else
-      render json: { errors: @salepost.errors.full_messages }, status: :unprocessible_entity
+      render json: { errors: @sale_post.errors.full_messages }, status: :unprocessible_entity
     end
   end
 
   def destroy
     # @post = post.find(params[:id])
-    @salepost.destroy
-    render json: @salepost, status: :accepted
+    @sale_post.destroy
+    render json: @sale_post, status: :accepted
   end
 
   private
 
-  def salepost_params
+  def sale_post_params
     params.permit(:name, :picture_url, :user_id)
   end
 
-  def find_salepost
-    @salepost = SalePost.find(params[:id])
+  def find_sale_post
+    @sale_post = SalePost.find(params[:id])
   end
 end
