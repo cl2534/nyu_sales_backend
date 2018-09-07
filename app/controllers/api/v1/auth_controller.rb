@@ -1,10 +1,12 @@
 class Api::V1::AuthController < ApplicationController
-  skip_before_action :authorized, only: %i[create, index]
+  skip_before_action :authorized, only: [:create, :index]
 
 
   def create
-    @user = User.find_by(email: user_login_params[:email])
 
+
+    @user = User.find_by(email: user_login_params[:email])
+  
     # if the user exists (IS NOT NIL), ruby will attempt to authenticate
     # without this check, I will try to call .authenticate on NIL
     if !!@user && @user.authenticate(user_login_params[:password])

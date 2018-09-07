@@ -57,7 +57,7 @@
 #
 # #Health & Beauty
 # salepost12= SalePost.create(name: 'Cleansing foam for sale', picture_url: 'https://s1.thcdn.com/productimg/600/600/11544672-4774516167473016.jpg',  user_id: 1)
-salepost18= SalePost.create(name: 'Lipstick for sale', picture_url: 'https://www.maccosmetics.com/media/export/cms/products/640x600/mac_sku_S7P004_640x600_0.jpg',  user_id: 2)
+# salepost18= SalePost.create(name: 'Lipstick for sale', picture_url: 'https://www.maccosmetics.com/media/export/cms/products/640x600/mac_sku_S7P004_640x600_0.jpg',  user_id: 2)
 #
 # #Sports & Outdoor
 # salepost14= SalePost.create(name: 'Football shoe for sale', picture_url: 'http://www.portraitsdescience.com/images//pic/eTJ1XaJc%20Nike.jpg',  user_id: 3)
@@ -89,7 +89,7 @@ salepost18= SalePost.create(name: 'Lipstick for sale', picture_url: 'https://www
 #
 # # Health & beauty posts
 # postcategory12 = PostCategory.create(sale_post_id: 12, sale_category_id: 1)
-postcategory18 = PostCategory.create(sale_post_id: 18, sale_category_id: 1)
+# postcategory18 = PostCategory.create(sale_post_id: 18, sale_category_id: 1)
 #
 # # Sports posts
 # postcategory14 = PostCategory.create(sale_post_id: 14, sale_category_id: 6)
