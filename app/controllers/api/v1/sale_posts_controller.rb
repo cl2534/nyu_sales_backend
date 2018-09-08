@@ -4,7 +4,7 @@ class Api::V1::SalePostsController < ApplicationController
 
   def index
     @sale_posts = SalePost.all.includes(:sale_categories).find_by id: params[:id]
-    render json: { sale_posts: SalePost.all}
+    render json: { sale_posts: SalePost.all}, include: ['sale_categories']
   end
 
   def new
