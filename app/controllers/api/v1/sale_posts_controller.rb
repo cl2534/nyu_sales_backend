@@ -3,8 +3,14 @@ class Api::V1::SalePostsController < ApplicationController
   skip_before_action :authorized, only: %i[create index]
 
   def index
-    @sale_posts = SalePost.all.includes(:sale_categories).find_by id: params[:id]
-    render json: { sale_posts: SalePost.all}, include: ['sale_categories']
+    # @sale_posts = SalePost.all.includes(:sale_categories, :comments).find_by id: params[:id]
+    @sale_posts = SalePost.all
+
+    render json: @sale_posts
+    # @sale_posts = SalePost.all.find_by id: params[:id]
+
+    # render @sale_posts.to_json{:include => [:sale_categories, :comments]}
+    # render json: { sale_posts: SalePost.all}, include: [:sale_categories,:comments]
   end
 
   def new
@@ -12,7 +18,7 @@ class Api::V1::SalePostsController < ApplicationController
   end
 
   def show
-    @sale_post = SalePost.all.includes(:sale_categories).find_by id: params[:id]
+    @sale_post = SalePost.all.includes(:sale_categories, :comments).find_by id: params[:id]
     # @sale_post = SalePost.find(params[:id])
     render json: { sale_post: @sale_post}
   end

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  resources :comments
   resources :post_categories
   namespace :api do
     namespace :v1 do
-      resources :sale_categories, :sale_posts, :post_categories, :users
+      resources :sale_categories, :sale_posts, :post_categories, :users, :comments
       # resources :users, only: %i[create]
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
