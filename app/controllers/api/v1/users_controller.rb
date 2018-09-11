@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
   before_action :find_user, only: [:show, :destroy, :update]
   # skip_before_action :authenticate_request, only: %i[login register]
-  skip_before_action :authorized, only: %i[create index]
+  skip_before_action :authorized, only: %i[create index show]
 
  # [...]
   def login
