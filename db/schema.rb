@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_200332) do
     t.text "name"
     t.text "picture_url"
     t.bigint "user_id"
+    t.text "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sale_posts_on_user_id"
