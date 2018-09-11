@@ -47,6 +47,4 @@ class Api::V1::CommentsController < ApplicationController
     def find_comment
       @comment = Comment.find(params[:id])
     end
-  end
-
 end
