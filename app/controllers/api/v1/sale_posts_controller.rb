@@ -1,6 +1,6 @@
 class Api::V1::SalePostsController < ApplicationController
   before_action :find_sale_post, only: [:show, :destroy, :update]
-  skip_before_action :authorized, only: %i[create index]
+  skip_before_action :authorized, only: %i[create index show]
 
   def index
     # @sale_posts = SalePost.all.includes(:sale_categories, :comments).find_by id: params[:id]
