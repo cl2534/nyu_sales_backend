@@ -1,6 +1,6 @@
 class Api::V1::SaleCategoriesController < ApplicationController
   before_action :find_sale_category, only: [:show, :destroy, :update]
-  skip_before_action :authorized, only: %i[create index]
+  skip_before_action :authorized, only: %i[create index show]
 
   def index
     @sale_categories = SaleCategory.all.includes(:sale_posts).find_by id: params[:id]
@@ -41,7 +41,7 @@ class Api::V1::SaleCategoriesController < ApplicationController
   private
 
   def sale_category_params
-    params.permit(:name)
+    params.permit(:name, :picture_url)
   end
 
   def find_sale_category

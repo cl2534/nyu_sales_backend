@@ -1,5 +1,5 @@
 class SaleCategorySerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :id, :name, :picture_url
   has_many :post_categories
   has_many :sale_posts, through: :post_categories
 

@@ -27,13 +27,13 @@ kurt = User.create(name: 'Kurt', email: 'kurt@nyu.edu', password: 'kurt', locati
 #
 #
 #
-salecategory1 = SaleCategory.create(name: 'Beauty & Health')
-salecategory2 = SaleCategory.create(name: 'Pet Supplies')
-salecategory3 = SaleCategory.create(name: 'Books & Audible')
-salecategory4 = SaleCategory.create(name: 'Electronics, Computers & Office')
-salecategory5 = SaleCategory.create(name: 'Clothing, Shoes & Jewelry')
-salecategory6 = SaleCategory.create(name: 'Sports & Outdoors')
-salecategory7 = SaleCategory.create(name: 'Home & kitchen Supplies')
+salecategory1 = SaleCategory.create(name: 'Beauty & Health', picture_url: 'http://www.netnewsledger.com/wp-content/uploads/2015/11/health-and-beauty1.jpg')
+salecategory2 = SaleCategory.create(name: 'Pet Supplies', picture_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCg2zy3eCCAis9qBJhqubCJ4nOb8nbRv2l8E3oVbfV8fUKctuyww')
+salecategory3 = SaleCategory.create(name: 'Books & Audible', picture_url: 'https://static.makeuseof.com/wp-content/uploads/2017/05/best-audiobooks-audible-trial-670x335.jpg')
+salecategory4 = SaleCategory.create(name: 'Electronics, Computers & Office', picture_url: 'https://qvc.scene7.com/is/image/QVC/e/55/e232355.001?$aemprodgallery$')
+salecategory5 = SaleCategory.create(name: 'Clothing, Shoes & Jewelry', picture_url: 'https://cdnmos-bikeradar.global.ssl.fastly.net/images/news/2017/08/29/shimano_2018_range-1504028142832-13umvpiyo32ti-630-80.jpg')
+salecategory6 = SaleCategory.create(name: 'Sports & Outdoors', picture_url: 'http://www.choosecoloradosprings.com/wp-content/uploads/2017/03/sports-and-outdoor-rec.jpg')
+salecategory7 = SaleCategory.create(name: 'Home & kitchen Supplies', picture_url: 'http://sylsdeals.com/wp-content/uploads/thumbs_dir/k2-_d902687a-f6ea-47f9-85ba-a638169ec0ba.v11-6gbjuji92orqq3kfua4omzd0ahk1coq3duxpdkruune.jpg')
 #
 #
 # #Clothing

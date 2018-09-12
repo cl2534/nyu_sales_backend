@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_200332) do
 
   create_table "sale_categories", force: :cascade do |t|
     t.text "name"
+    t.text "picture_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
