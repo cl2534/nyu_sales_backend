@@ -47,7 +47,7 @@ class Api::V1::SalePostsController < ApplicationController
   private
 
   def sale_post_params
-    params.permit(:name, :picture_url, :user_id)
+    params.permit(:name, :picture_url, :user_id, :price)
   end
 
   def find_sale_post
