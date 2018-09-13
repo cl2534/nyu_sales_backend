@@ -18,9 +18,9 @@ class Api::V1::SalePostsController < ApplicationController
   end
 
   def show
-    @sale_post = SalePost.all.includes(:sale_categories, :comments).find_by id: params[:id]
+    @sale_post = SalePost.all.find_by id: params[:id]
     # @sale_post = SalePost.find(params[:id])
-    render json: { sale_post: @sale_post}
+    render json: @sale_post
   end
 
   def create
