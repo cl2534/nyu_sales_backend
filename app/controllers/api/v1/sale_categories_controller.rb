@@ -14,7 +14,7 @@ class Api::V1::SaleCategoriesController < ApplicationController
   def show
     sale_category = SaleCategory.includes(:sale_posts).find_by id: params[:id]
     # @sale_category = SaleCategory.find(params[:id])
-    render json: { sale_category: @sale_category}
+    render json: { sale_category: @sale_category}, include: ['sale_posts']
   end
 
   def create
