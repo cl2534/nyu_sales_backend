@@ -6,12 +6,13 @@
 # #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # #   Character.create(name: 'Luke', movie: movies.first)
 #
-# chang = User.create(name: 'Chang', email:'cl2534@nyu.edu', password: 'chang', location: 'Brooklyn, NY', picture_url: 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/379894_2451639688280_1117897982_n.jpg?_nc_cat=0&oh=1a3e8fa7c045fa294318760141ff999b&oe=5C389347')
+# chang = User.update(name: 'Chang', email:'cl2534@nyu.edu', password: 'chang', location: 'Brooklyn, NY', picture_url: 'https://scontent.fewr1-2.fna.fbcdn.net/v/t1.0-9/379894_2451639688280_1117897982_n.jpg?_nc_cat=111&_nc_oc=AQmWgo3F5zEqfaUwSj-QzRuv78yjiGTlrCHsCBk4enpxZynpoNoMX6fJXBCcAXvM8NE&_nc_ht=scontent.fewr1-2.fna&oh=2285714e8969ffc1bcfa4935c12f4438&oe=5DEBA247')
 # isaac = User.create(name: 'Isaac', email: 'issac@nyu.edu', password: 'isaac', location: 'NY', picture_url: 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/16830960_1363007233719556_2929774558315074100_n.jpg?_nc_cat=0&oh=83cf295e78a599494ca8558ae9493193&oe=5C0AD3CE')
 # risher = User.create(name: 'Risher', email: 'risher@nyu.edu', password: 'risher', location: 'NY')
 # wolfgang = User.create(name: 'Wolfgang', email:'wolfgang@nyu.edu', password: 'wolfgang', location: 'NY')
 # jee = User.create(name: 'Jee', email:'jee@nyu.edu', password: 'jee', location: 'Wellesley College', picture_url: 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/429446_4791197625374_507971728_n.jpg?_nc_cat=0&oh=405ddf3031fed0ed3105be2d403b74ed&oe=5C05CB74')
 # kurt = User.create(name: 'Kurt', email: 'kurt@nyu.edu', password: 'kurt', location: 'Jersey City, NJ', picture_url: 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-1/12549059_1127419003936766_4388258233688797749_n.jpg?_nc_cat=0&oh=386ff3d46374f1a07d2de873b42f7b7f&oe=5BFBF505')
+
 # shing = User.create(name: 'Shing', location: 'Brooklyn, NY')
 # # sree = User.create(name: 'Sree', location: 'Jersey City, NJ')
 # # laura = User.create(name: 'Laura', location: 'NY')
